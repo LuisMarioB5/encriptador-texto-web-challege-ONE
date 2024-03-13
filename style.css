@@ -1,0 +1,227 @@
+:root {
+    /* Definición de las variables para los colores de la paleta de colores */
+
+    /* Dark blue */
+    --dark-blue-100: #609ED4;
+    --dark-blue-200: #356EA9;
+    --dark-blue-300: #0A3871;
+    --dark-blue-400: #072B61;
+    --dark-blue-500: #052051;
+    
+    /* Light blue */
+    --light-blue-100: #F3F5FC;
+    --light-blue-200: #EFF1FA;
+    --light-blue-300: #E9ECF8;
+    --light-blue-400: #AAB2D5;
+    --light-blue-500: #757FB2;
+    
+    /* Gray */
+    --gray-100: #CED4DA;
+    --gray-200: #ADB5BD;
+    --gray-300: #868E96;
+    --gray-400: #495057;
+    --gray-500: #343A40;
+}
+
+/* Estilo de la selección de texto en todos los elementos */
+::selection {
+    background-color: var(--dark-blue-100); /* Color de fondo de la selección */
+    color: var(--light-blue-100); /* Color del texto seleccionado */
+}
+
+body {
+    background-color: var(--light-blue-100);
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#div-logo {
+    text-align: center;
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    top: 40px;
+    left: 40px;
+}
+
+#div-logo img {
+    width: 31.09px;
+    height: 48px;
+
+}
+
+#language-menu {
+    position: absolute;
+    height: auto;
+    top: 128px;
+    left: 40px;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 800px;
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.04);
+}
+
+#language-list {
+    position: relative;
+    display: flex;
+    padding: 16px;
+    max-height: 128px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow-y: auto;
+    border-radius: 800px;
+    background: white;
+}
+
+.language {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: transparent;
+    font-family: Inter;
+    cursor: pointer;
+}
+
+.language:first-child {
+    color: white;
+    background-color: var(--dark-blue-300);
+}
+
+.language:nth-child(2) {
+    color: var(--dark-blue-300);
+}
+
+.language:not(:first-child):hover {
+    background-color: var(--light-blue-200);
+} 
+
+textarea {
+    background-color: transparent;
+    position: relative;
+    left: 240px;
+    top: 168px;
+    
+    color: var(--dark-blue-300);
+    font-family: Inter;
+    line-height: 1.5;
+    font-size: 32px;
+    
+    width: 675px;
+    height: 600px;
+
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+/* Cambiar el color del texto del placeholder en todos los textarea */
+textarea::placeholder {
+    color: var(--dark-blue-200); /* Cambia el color del texto del placeholder */
+}
+
+.btn {
+    border-radius: 24px;
+    font-family: Inter;
+    padding: 24px;
+    width: 328px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+#div-btns {
+    align-items: flex-start;
+    display: flex;
+    width: 680px;
+    gap: 29px;
+    position: absolute;
+    top: 87%;
+    left: 240px;
+}
+
+.btn:first-child {
+    background-color: var(--dark-blue-300);
+    color: white;
+    border: none;
+}
+
+.btn:nth-child(2) {
+    background-color: transparent;
+    border: solid 1px var(--dark-blue-300);
+    color: var(--dark-blue-300);
+}
+
+#div-warning {
+    display: inline-flex;
+    position: absolute;
+    top: 84%;
+    left: 240px;
+}
+
+#div-warning img {
+    width: 16px;
+    margin-right: 8px;
+}
+
+#div-warning p {
+    color: var(--gray-400);
+    font-family: Inter;
+}
+
+#div-result {
+    display: inline;
+    position: absolute;
+    width: 400px;
+    height: 92vh;
+    top: 40px;
+    left: 69vw;
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);    
+}
+
+#div-result div {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 336px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+#div-result div img {
+    width: 336px;
+    margin-bottom: 16px;
+}
+
+#div-result div h2 {
+    color: var(--gray-500);
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+#div-result div p {
+    color: var(--gray-400);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
