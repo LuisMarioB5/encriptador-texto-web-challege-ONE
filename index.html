@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador Web | ONE Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+
+    <!-- Link para la fuente 'Inter' de los botones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="div-logo">
+        <img src="img/logo.png" alt="Logo de Alura, es una 'a' minúscula de color azul oscuro">
+    </div>
+    
+    <div id="language-menu">
+
+        <div id="language-list">
+            <!-- Se debe crear la función en JS para que cambie el idioma -->
+            <button class="language" onclick="cambiarIdioma('es')">ES</button>
+            <button class="language" onclick="cambiarIdioma('en')">EN</button>
+        </div>
+
+    </div>
+
+
+    <textarea wrap="soft" placeholder="Ingrese el texto aqui"></textarea>
+
+    <div id="div-warning">
+        <img src="img/warning-circle.png" alt="Circulo pequeño con simbolo de explamación centrado.">
+        <p>Solo letras minúsculas y sin acentos</p>
+    </div>
+    
+    <div id="div-btns">
+        <button class="btn">Encriptar</button>
+        <button class="btn">Desencriptar</button>
+    </div>
+
+    <div id="div-result">
+        <div>
+            <img class="element" src="img/doll.png" alt="Imagen de una mujer tratando de encontrar un diamante.">
+
+            <h2 class="element">Ningún mensaje fue encontrado</h2>
+
+            <p class="element">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </div>
+
+</body>
+</html>
