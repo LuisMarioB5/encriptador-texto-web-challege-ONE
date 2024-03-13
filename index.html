@@ -16,6 +16,8 @@
     <div id="div-logo">
         <img src="img/logo.png" alt="Logo de Alura, es una 'a' minúscula de color azul oscuro">
     </div>
+
+    <h1 id="titulo-principal">Encriptador de Texto Web | Challenge ONE</h1>
     
     <div id="language-menu">
 
@@ -28,7 +30,7 @@
     </div>
 
 
-    <textarea wrap="soft" placeholder="Ingrese el texto aqui"></textarea>
+    <textarea id="input-text" wrap="soft" placeholder="Ingrese el texto aqui">Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
 
     <div id="div-warning">
         <img src="img/warning-circle.png" alt="Circulo pequeño con simbolo de explamación centrado.">
@@ -41,7 +43,13 @@
     </div>
 
     <div id="div-result">
-        <div>
+
+        <div id="result" style="display: flex;">
+            <textarea id="output-text" wrap="soft">Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
+            <button class="btn">Copiar</button>
+        </div>
+
+        <div id="no-msg" style="display: none;">
             <img class="element" src="img/doll.png" alt="Imagen de una mujer tratando de encontrar un diamante.">
 
             <h2 class="element">Ningún mensaje fue encontrado</h2>
