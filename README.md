@@ -19,15 +19,21 @@ Actualmente, el proyecto se encuentra en una etapa inicial de desarrollo. Durant
 - `img`: Carpeta con las imágenes utilizadas en el proyecto.
 - `LICENSE.md`: Licencia en la que esta sujeto el proyecto.
 - `README.md`: Este archivo el cual explica de que trata el proyecto.
-
+- `screenshots`: Carpeta con las capturas de pantalla con el progreso del proyecto.
 
 ## Tecnologías utilizadas
 
 - HTML
+- CSS
 
 ## Licencia
 
 Este proyecto está bajo la [licencia MIT](LICENSE.md).
+
+## Capturas de Pantalla
+
+Aquí hay una vista previa visual del progreso actual del proyecto:
+![Progreso actual en la parte de HTML y CSS](screenshots/image.png)
 
 ## Recursos Externos
 
