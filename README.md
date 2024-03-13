@@ -14,14 +14,20 @@ Actualmente, el proyecto se encuentra en una etapa inicial de desarrollo. Durant
 ## Estructura del proyecto
 
 - `index.html`: Página principal de la aplicación (en desarrollo).
-
+- `style.css`: Estilos para la presentación del proyecto (en desarrollo).
+- `reset.css`: Reinicio de los estilos predeterminado del navegador.
+- `img`: Carpeta con las imágenes utilizadas en el proyecto.
+- `LICENSE.md`: Licencia en la que esta sujeto el proyecto.
+- `README.md`: Este archivo el cual explica de que trata el proyecto.
 
 
 ## Tecnologías utilizadas
 
 - HTML
 
+## Licencia
 
+Este proyecto está bajo la [licencia MIT](LICENSE.md).
 
 ## Recursos Externos
 
