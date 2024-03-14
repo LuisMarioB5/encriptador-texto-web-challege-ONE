@@ -29,29 +29,39 @@
     color: var(--light-blue-100); /* Color del texto seleccionado */
 }
 
-body {
-    background-color: var(--light-blue-100);
+
+html {
+    height: 100vh;
+    width: 100vw;
 }
 
+body {
+    background-color: var(--light-blue-100);
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 62.5vw;
+    top: 3.76175vh;
+    left: 2.7778vw;
+}
 
 header section {
     text-align: center;
-    position: absolute;
-    width: 120px;
+    width: 8.334vw;
     height: 48px;
-    top: 40px;
-    left: 40px;
 }
 
 header section img {
-    width: 31.09px;
+    width: 31px;
     height: 48px;
 }
 
 header h1 {
-    position: absolute;
-    top: 54px;
-    left: 224.5px;
+    margin-left: 4.8vw;
     font-family: Inter;
     font-size: 34px;
     color: var(--dark-blue-300);
@@ -61,37 +71,37 @@ header h1 {
 #menu-idiomas {
     position: absolute;
     height: auto;
-    top: 128px;
-    left: 40px;
+    top: 12.0376vh;
+    left: 2.7778vw;
     display: flex;
-    padding: 24px;
+    padding: 1.5em;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    border-radius: 800px;
+    gap: 0.63em;
+    border-radius: 50em;
     background: rgba(255, 255, 255, 0.24);
-    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: 0em 0.5em 1.5em 0em rgba(0, 0, 0, 0.04);
 }
 
 #menu-idiomas section {
     position: relative;
     display: flex;
-    padding: 16px;
-    max-height: 128px;
+    padding: 1em;
+    max-height: 8em;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 1em;
     overflow-y: auto;
-    border-radius: 800px;
+    border-radius: 50em;
     background: white;
 }
 
 .idioma {
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
     border: none;
     border-radius: 50%;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: normal;
     background-color: transparent;
     font-family: Inter;
@@ -108,25 +118,29 @@ header h1 {
     background-color: var(--light-blue-200);
 }
 
+main {
+    position: relative;
+    top: 7.28582vh;
+    display: inline-block;
+    left: 16.6667vw; /* 15em */
+}
+
+
 textarea {
     background-color: transparent;
     font-family: Inter;
-    resize: none;
-    border: none;
+    /*resize: none;
+    border: none;*/
     outline: none;
 }
 
 #texto-entrada {
-    position: relative;
-    left: 240px;
-    top: 128px;
-    
     color: var(--dark-blue-300);
     line-height: 1.5;
     font-size: 30px;
     
-    width: 675px;
-    height: 16em;
+    width: 675px; /* Ancho del textarea de la entrada de los datos, tratar de hacer responsivo */
+    height: 16.5em;
 }
 
 /* Cambiar el color del texto del placeholder en todos los textarea */
@@ -135,18 +149,19 @@ textarea {
 }
 
 #precaucion {
-    display: inline-flex;
-    position: absolute;
-    top: 84%;
-    left: 240px;
+    display: flex;
+    align-items: center;
+    margin-top: .5em;
 }
 
 #precaucion img {
-    width: 16px;
+    display: inline-block;
+    width: 1em;
     margin-right: 8px;
 }
 
 #precaucion p {
+    display: inline-block;
     color: var(--gray-400);
     font-family: Inter;
 }
@@ -154,18 +169,16 @@ textarea {
 #botones {
     align-items: flex-start;
     display: flex;
-    width: 680px;
-    gap: 29px;
-    position: absolute;
-    top: 87%;
-    left: 240px;
+    width: 670px; /* Ancho del section que contiene los botones 'Encriptar' y 'Desencriptar', tratar de hacer responsivo */
+    gap: 1.85em;
+    margin-top: 1em;
 }
 
 .boton {
-    border-radius: 24px;
+    border-radius: 1.5em;
     font-family: Inter;
-    padding: 24px;
-    width: 328px;
+    padding: 1.5em;
+    width: 23vw;/*328px;*/
     font-size: 16px;
     cursor: pointer;
     font-weight: 550;
@@ -182,7 +195,7 @@ textarea {
 
 #resultados {
     display: inline;
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 92vh;
     top: 40px;
@@ -231,13 +244,13 @@ textarea {
     transform: translate(-50%, -50%);
     width: 336px;
     display: flex;
-    gap: 16px;
+    gap: 1em;
     flex-direction: column;
 }
 
 #error img {
     width: 336px;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
 }
 
 #error h2 {
@@ -254,7 +267,7 @@ textarea {
     color: var(--gray-400);
     text-align: center;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 1em;
     font-style: normal;
     font-weight: normal;
     line-height: 1.5;
