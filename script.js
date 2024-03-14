@@ -1,13 +1,21 @@
+// Variable para almacenar el idioma actual de la página
 var idioma;
 
+// Este evento se dispará luego de que todo el contenido HTML este completamente cargado en la página
 document.addEventListener('DOMContentLoaded', function() {
-    let idioma_predeterminado = document.querySelector('.idioma'); // Selecciona el primer botón con la clase '.idioma'
+    // Selecciona el primer botón con la clase 'idioma'
+    let idioma_predeterminado = document.querySelector('.idioma');
 
-    cambiar_idioma(idioma_predeterminado); // Llama a la función cambiar_idioma para activar el primer botón
+    // Llama a la función cambiar_idioma para seleccionar el idioma del primer botón
+    cambiar_idioma(idioma_predeterminado); 
 });
 
+// Función para cambiar el idioma de los elementos de la página
 function cambiar_idioma(boton_presionado) {
+    // Transformando el valor del boton a minúsculas (lowercase)
     idioma = boton_presionado.textContent.toLowerCase();
+
+    // Definición de los elementos HTML, utilizando el DOM
     let logo = document.getElementById('logo');
     let h1 = document.getElementById('titulo-principal');
     let botones_idioma = document.querySelectorAll('.idioma');
@@ -22,18 +30,15 @@ function cambiar_idioma(boton_presionado) {
     let titulo_error = document.getElementById('titulo-error')
     let parrafo_error = document.getElementById('parrafo-error')
 
-
-    
-    // Quitamos la clase 'presionado' de todos los botones
+    // Vacia la clase 'presionado' para que solo exista un botón en esta clase
     botones_idioma.forEach(function(boton) {
         boton.classList.remove('presionado');
     });
     
-    // Agregamos la clase 'presionado' al botón presionado
+    // Agrega el botón que fue presionado a la clase presionado
     boton_presionado.classList.add('presionado');
 
-
-
+    // En caso de que el idioma seleccionado sea español
     if (idioma === 'es'){
         logo.alt = 'Logo de Alura, es una "a" minúscula de color azul oscuro';
         document.title = 'Encriptador de Texto Web | Challenge ONE';
@@ -50,6 +55,7 @@ function cambiar_idioma(boton_presionado) {
         parrafo_error.textContent = 'Ingresa el texto que desees encriptar o desencriptar.';
     }
 
+    // En caso de que el idioma seleccionado sea inglés
     else if (idioma === 'en'){
         logo.alt = 'Alura logo, it is a dark blue lowercase "a"';
         document.title = 'Web Text Encryptor | Challenge ONE';
@@ -67,6 +73,7 @@ function cambiar_idioma(boton_presionado) {
     }
 }
 
+// Función para almacenar la informacion del textarea de visualización en el portapapeles
 function copiar_portapapeles() {
     let textarea = document.getElementById('texto-salida');
     let button = document.getElementById('boton-copiar')
@@ -85,10 +92,5 @@ function copiar_portapapeles() {
         button.textContent = 'Copied Text!'
     }
 }
-
-
-
-
-
 
 
