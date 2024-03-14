@@ -31,12 +31,10 @@
 
 body {
     background-color: var(--light-blue-100);
-    position: relative;
-    height: 100vh;
-    width: 100vw;
 }
 
-#div-logo {
+
+header section {
     text-align: center;
     position: absolute;
     width: 120px;
@@ -45,13 +43,12 @@ body {
     left: 40px;
 }
 
-#div-logo img {
+header section img {
     width: 31.09px;
     height: 48px;
-
 }
 
-#titulo-principal {
+header h1 {
     position: absolute;
     top: 54px;
     left: 224.5px;
@@ -61,7 +58,7 @@ body {
     font-weight: bold;
 }
 
-#language-menu {
+#menu-idiomas {
     position: absolute;
     height: auto;
     top: 128px;
@@ -76,7 +73,7 @@ body {
     box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.04);
 }
 
-#language-list {
+#menu-idiomas section {
     position: relative;
     display: flex;
     padding: 16px;
@@ -89,7 +86,7 @@ body {
     background: white;
 }
 
-.language {
+.idioma {
     width: 40px;
     height: 40px;
     border: none;
@@ -99,20 +96,17 @@ body {
     background-color: transparent;
     font-family: Inter;
     cursor: pointer;
+    color: var(--dark-blue-300);
 }
 
-.language:first-child {
+.idioma.presionado {
     color: white;
     background-color: var(--dark-blue-300);
 }
 
-.language:nth-child(2) {
-    color: var(--dark-blue-300);
-}
-
-.language:not(:first-child):hover {
+.idioma:not(.presionado):hover {
     background-color: var(--light-blue-200);
-} 
+}
 
 textarea {
     background-color: transparent;
@@ -122,7 +116,7 @@ textarea {
     outline: none;
 }
 
-#input-text {
+#texto-entrada {
     position: relative;
     left: 240px;
     top: 128px;
@@ -132,15 +126,42 @@ textarea {
     font-size: 30px;
     
     width: 675px;
-    height: 740px;
+    height: 16em;
 }
 
 /* Cambiar el color del texto del placeholder en todos los textarea */
-#input-text::placeholder {
+#texto-entrada::placeholder {
     color: var(--dark-blue-200); /* Cambia el color del texto del placeholder */
 }
 
-.btn {
+#precaucion {
+    display: inline-flex;
+    position: absolute;
+    top: 84%;
+    left: 240px;
+}
+
+#precaucion img {
+    width: 16px;
+    margin-right: 8px;
+}
+
+#precaucion p {
+    color: var(--gray-400);
+    font-family: Inter;
+}
+
+#botones {
+    align-items: flex-start;
+    display: flex;
+    width: 680px;
+    gap: 29px;
+    position: absolute;
+    top: 87%;
+    left: 240px;
+}
+
+.boton {
     border-radius: 24px;
     font-family: Inter;
     padding: 24px;
@@ -153,40 +174,13 @@ textarea {
     color: var(--dark-blue-300);
 }
 
-#div-btns {
-    align-items: flex-start;
-    display: flex;
-    width: 680px;
-    gap: 29px;
-    position: absolute;
-    top: 87%;
-    left: 240px;
-}
-
-.btn:first-child {
+.boton:first-child {
     background-color: var(--dark-blue-300);
     color: white;
     border: none;
 }
 
-#div-warning {
-    display: inline-flex;
-    position: absolute;
-    top: 84%;
-    left: 240px;
-}
-
-#div-warning img {
-    width: 16px;
-    margin-right: 8px;
-}
-
-#div-warning p {
-    color: var(--gray-400);
-    font-family: Inter;
-}
-
-#div-result {
+#resultados {
     display: inline;
     position: absolute;
     width: 400px;
@@ -198,7 +192,39 @@ textarea {
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);    
 }
 
-#no-msg {
+#resultados button{
+    position: absolute;
+    left: 50%;
+    top: 87%;
+    transform: translate(-50%, 50%);
+}
+
+#resultado {
+    height: 100%;
+    background-color: transparent;
+    border-radius: 32px;
+}
+
+#resultado button {
+    position: absolute;
+    left: 50%;
+    top: 83%;
+    transform: translate(-50%, 50%);
+}
+
+#texto-salida {
+    color: var(--gray-400);
+    line-height: 1.5;
+    font-size: 24px;
+    width: 336px;
+    height: 21.669em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -57%);
+}
+
+#error {
     position: absolute; 
     top: 50%;
     left: 50%;
@@ -209,12 +235,12 @@ textarea {
     flex-direction: column;
 }
 
-#no-msg img {
+#error img {
     width: 336px;
     margin-bottom: 16px;
 }
 
-#no-msg h2 {
+#error h2 {
     color: var(--gray-500);
     text-align: center;
     font-family: Inter;
@@ -224,7 +250,7 @@ textarea {
     line-height: 1.2;
 }
 
-#no-msg p {
+#error p {
     color: var(--gray-400);
     text-align: center;
     font-family: Inter;
@@ -235,27 +261,5 @@ textarea {
 }
 
 
-#output-text {
-    color: var(--gray-400);
-    line-height: 1.5;
-    font-size: 24px;
-    width: 336px;
-    height: 75vh;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -57%);
-}
 
-#div-result button{
-    position: absolute;
-    left: 50%;
-    top: 87%;
-    transform: translate(-50%, 50%);
-}
 
-#result {
-    height: 100%;
-    background-color: transparent;
-    border-radius: 32px;
-}
