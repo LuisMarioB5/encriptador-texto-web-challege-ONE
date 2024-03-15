@@ -21,6 +21,12 @@
     --gray-300: #868E96;
     --gray-400: #495057;
     --gray-500: #343A40;
+
+    /* Variables para mantener el alineamiento entre la parte izquierda y derecha de la página */
+    --textarea-height: 65.5vh;
+    --margin-top: 1.5vh;
+    --margin-bottom: 3vh;
+    --gap: 4vh;
 }
 
 /* Estilo de la selección de texto en todos los elementos */
@@ -30,14 +36,10 @@
 }
 
 
-html {
+html, body {
+    background-color: var(--light-blue-100);
     height: 100vh;
     width: 100vw;
-}
-
-body {
-    background-color: var(--light-blue-100);
-    position: relative;
 }
 
 header {
@@ -66,6 +68,7 @@ header h1 {
     font-family: Inter;
     font-weight: bold;
     font-size: 32px;
+    
     width: 80.5vw;
     margin-left: 3.1vw;
 }
@@ -122,25 +125,34 @@ header h1 {
 
 main {
     position: relative;
-    top: 7.28582vh;
+    top: 5vh;
     display: flex;
     width: calc(100vw - 16.6667vw - 3vw);
     margin-left: 16.6667vw;
     margin-right: 3vw;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 #interacion-usuario {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
     width: 58%;
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+    gap: calc((var(--gap)) / 2)
 }
 
 textarea {
     background-color: transparent;
     font-family: Inter;
     resize: none;
-    /*border: none;*/
+    border: none;
     outline: none;
+    height: var(--textarea-height);
 }
 
 #texto-entrada {
@@ -148,27 +160,25 @@ textarea {
     line-height: 1.5;
     font-size: 30px;
     width: 100%; 
-    height: 65.5vh;
 }
 
 #texto-entrada::placeholder {
-    /* Cambia el color del texto del placeholder */
     color: var(--dark-blue-200);
 }
 
 #precaucion {
+    align-items: center;
+    flex-direction: row;
+    margin-top: -16px;
     display: flex;
-    margin-top: .5em;
+    gap: .5em;
 }
 
 #precaucion img {
-    display: inline-block;
-    margin-right: .5em;
     width: 1em;
 }
 
 #precaucion p {
-    display: inline-block;
     color: var(--gray-400);
     font-family: Inter;
 }
@@ -177,14 +187,12 @@ textarea {
     display: flex;
     width: 100%;
     gap: 3vw;
-    margin-top: 1em;
-
 }
 
 .boton {
     border-radius: 1.5em;
     font-family: Inter;
-    padding: 1.5em;
+    padding: 2.5078vh;
     width: 50%;
     font-size: 16px;
     cursor: pointer;
@@ -201,34 +209,31 @@ textarea {
 
 #resultados {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    height: 83vh;
     width: 30vw;
     background-color: white;
     border-radius: 32px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    margin-top: -1.1em;
 }
 
 #resultado {
     background-color: transparent;
     flex-direction: column;
     align-items: center;
-    margin-top: -1.2vh;
+    gap: var(--gap);
+    margin-bottom: var(--margin-bottom);
+    margin-top: var(--margin-top);
 }
 
 #texto-salida {
     color: var(--gray-400);
-    line-height: 1.5;
+    line-height: 2;
     font-size: 24px;
     width: 25vw;
-    /*height: 71.108vh; /*valor en la laptop*/
-    height: 65.3vh;
 }
 
 #boton-copiar {
-    margin-top: 4.5141vh; /*-43.200*/
     width: 80%;
 }
 
@@ -274,7 +279,7 @@ footer {
     left: 0;
     width: 100%;
     background-color: white;
-    padding: 1em 0;
+    padding: 1.5vh 0;
     text-align: center;
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
@@ -285,7 +290,7 @@ footer section {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 1em;
+    gap: 1.5vw;
 }
 
 .desarrollador p {
