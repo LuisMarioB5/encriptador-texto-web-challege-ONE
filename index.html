@@ -23,10 +23,11 @@
         <h1 id="titulo-principal">Encriptador de Texto Web | Challenge ONE</h1>
     </header>
     
-    <nav id="menu-idiomas" role="Elección de idioma">
+    <nav id="menu-idiomas">
         <section>
             <button class="idioma" onclick="cambiar_idioma(this)">ES</button>
             <button class="idioma" onclick="cambiar_idioma(this)">EN</button>
+            <button class="idioma" onclick="cambiar_idioma(this)">PT</button>
         </section>
     </nav>
 
@@ -34,23 +35,23 @@
         <section id="interacion-usuario">
             <textarea id="texto-entrada" wrap="soft" placeholder="Ingrese el texto aquí">Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
             <aside id="precaucion">
-                <img id="img-precaucion" src="img/warning-circle.png" alt="Circulo pequeño con simbolo de explamación centrado.">
+                <img id="img-precaucion" src="img/warning-circle.png" alt="Pequeño círculo con símbolo de exclamación centrado.">
                 <p id="precaucion-texto">Solo letras minúsculas y sin acentos</p>
             </aside>
             
             <section id="botones">
                 <button class="boton" id="boton-encriptar" onclick="encriptar_mensaje()">Encriptar</button>
-                <button class="boton" id="boton-desencriptar">Desencriptar</button>
+                <button class="boton" id="boton-desencriptar" onclick="desencriptar_mensaje()">Desencriptar</button>
             </section>
         </section>
 
         <section id="resultados">
-            <article id="resultado" style="display: flex;">
-                <textarea id="texto-salida" wrap="soft" placeholder="Visualización del resultado" readonly></textarea>
+            <article id="resultado" style="display: none;">
+                <textarea id="texto-salida" wrap="soft" placeholder="Visualización del resultado" readonly>Prueba</textarea>
                 <button class="boton" id="boton-copiar" onclick="copiar_portapapeles()">Copiar</button>
             </article>
 
-            <article id="error" style="display: none;">
+            <article id="error" style="display: flex;">
                 <img id="img-error" class="elemento-error" src="img/doll.png" alt="Imagen de una mujer tratando de encontrar un diamante.">
                 <h2 class="elemento-error" id="titulo-error">Ningún mensaje fue encontrado</h2>
                 <p class="elemento-error" id="parrafo-error">Ingresa el texto que desees encriptar o desencriptar.</p>
@@ -59,7 +60,7 @@
     </main>
 
     <footer>
-        <section class="desarrollador" role="Nombre del desarrollador de esta página, y el año en que se desarrollo.">
+        <section class="desarrollador">
             
             <p id="desarrollador"><b>Desarrollado por:</b> Luis Mario Bonilla Madera</p>
             <p id="year"><b>Año:</b> 2024</p>
