@@ -31,20 +31,22 @@
     </nav>
 
     <main>
-        <textarea id="texto-entrada" wrap="soft" placeholder="Ingrese el texto aquí">Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
-        <aside id="precaucion">
-            <img id="img-precaucion" src="img/warning-circle.png" alt="Circulo pequeño con simbolo de explamación centrado.">
-            <p id="precaucion-texto">Solo letras minúsculas y sin acentos</p>
-        </aside>
-        
-        <section id="botones">
-            <button class="boton" id="boton-encriptar">Encriptar</button>
-            <button class="boton" id="boton-desencriptar">Desencriptar</button>
+        <section id="interacion-usuario">
+            <textarea id="texto-entrada" wrap="soft" placeholder="Ingrese el texto aquí">Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
+            <aside id="precaucion">
+                <img id="img-precaucion" src="img/warning-circle.png" alt="Circulo pequeño con simbolo de explamación centrado.">
+                <p id="precaucion-texto">Solo letras minúsculas y sin acentos</p>
+            </aside>
+            
+            <section id="botones">
+                <button class="boton" id="boton-encriptar" onclick="encriptar_mensaje()">Encriptar</button>
+                <button class="boton" id="boton-desencriptar">Desencriptar</button>
+            </section>
         </section>
 
         <section id="resultados">
             <article id="resultado" style="display: flex;">
-                <textarea id="texto-salida" wrap="soft" placeholder="Visualización del resultado" readonly>Lorem ipsum dolor sit amet consectetur adipiscing elit Orci montes sit et diam risus scelerisque vitae est Tortor maecenas nunc ut laoreet Eget diam mauris quam quisque ut eget fringilla sit elit Libero sodales duis fames id diam feugiat aliquet non egestas</textarea>
+                <textarea id="texto-salida" wrap="soft" placeholder="Visualización del resultado" readonly></textarea>
                 <button class="boton" id="boton-copiar" onclick="copiar_portapapeles()">Copiar</button>
             </article>
 
