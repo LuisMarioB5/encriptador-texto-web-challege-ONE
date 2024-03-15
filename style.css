@@ -43,15 +43,16 @@ body {
 header {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     position: relative;
-    width: 62.5vw;
+    width: 94.2vw;
     top: 3.76175vh;
     left: 2.7778vw;
 }
 
 header section {
     text-align: center;
-    width: 8.334vw;
+    width: 10.512vw;
     height: 48px;
 }
 
@@ -61,11 +62,12 @@ header section img {
 }
 
 header h1 {
-    margin-left: 4.8vw;
-    font-family: Inter;
-    font-size: 34px;
     color: var(--dark-blue-300);
+    font-family: Inter;
     font-weight: bold;
+    font-size: 32px;
+    width: 80.5vw;
+    margin-left: 3.1vw;
 }
 
 #menu-idiomas {
@@ -110,8 +112,8 @@ header h1 {
 }
 
 .idioma.presionado {
-    color: white;
     background-color: var(--dark-blue-300);
+    color: white;
 }
 
 .idioma:not(.presionado):hover {
@@ -121,16 +123,23 @@ header h1 {
 main {
     position: relative;
     top: 7.28582vh;
-    display: inline-block;
-    left: 16.6667vw; /* 15em */
+    display: flex;
+    width: calc(100vw - 16.6667vw - 3vw);
+    margin-left: 16.6667vw;
+    margin-right: 3vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+#interacion-usuario {
+    width: 58%;
+}
 
 textarea {
     background-color: transparent;
     font-family: Inter;
-    /*resize: none;
-    border: none;*/
+    resize: none;
+    border: none;
     outline: none;
 }
 
@@ -138,26 +147,24 @@ textarea {
     color: var(--dark-blue-300);
     line-height: 1.5;
     font-size: 30px;
-    
-    width: 675px; /* Ancho del textarea de la entrada de los datos, tratar de hacer responsivo */
-    height: 16.5em;
+    width: 100%; 
+    height: 65.5vh;
 }
 
-/* Cambiar el color del texto del placeholder en todos los textarea */
 #texto-entrada::placeholder {
-    color: var(--dark-blue-200); /* Cambia el color del texto del placeholder */
+    /* Cambia el color del texto del placeholder */
+    color: var(--dark-blue-200);
 }
 
 #precaucion {
     display: flex;
-    align-items: center;
     margin-top: .5em;
 }
 
 #precaucion img {
     display: inline-block;
+    margin-right: .5em;
     width: 1em;
-    margin-right: 8px;
 }
 
 #precaucion p {
@@ -167,10 +174,9 @@ textarea {
 }
 
 #botones {
-    align-items: flex-start;
     display: flex;
-    width: 670px; /* Ancho del section que contiene los botones 'Encriptar' y 'Desencriptar', tratar de hacer responsivo */
-    gap: 1.85em;
+    width: 100%;
+    gap: 3vw;
     margin-top: 1em;
 }
 
@@ -178,7 +184,7 @@ textarea {
     border-radius: 1.5em;
     font-family: Inter;
     padding: 1.5em;
-    width: 23vw;/*328px;*/
+    width: 50%;
     font-size: 16px;
     cursor: pointer;
     font-weight: 550;
@@ -187,54 +193,38 @@ textarea {
     color: var(--dark-blue-300);
 }
 
-.boton:first-child {
-    background-color: var(--dark-blue-300);
-    color: white;
-    border: none;
-}
+
 
 #resultados {
-    display: inline;
-    position: relative;
-    width: 400px;
-    height: 92vh;
-    top: 40px;
-    left: 69vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    width: 30vw;
     background-color: white;
     border-radius: 32px;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);    
-}
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    margin-top: -12.84px;
 
-#resultados button{
-    position: absolute;
-    left: 50%;
-    top: 87%;
-    transform: translate(-50%, 50%);
+  
+
 }
 
 #resultado {
-    height: 100%;
+    width: 95%;
+    height: 96%;
     background-color: transparent;
     border-radius: 32px;
-}
-
-#resultado button {
-    position: absolute;
-    left: 50%;
-    top: 83%;
-    transform: translate(-50%, 50%);
+    flex-direction: column;
+    align-items: center;
 }
 
 #texto-salida {
     color: var(--gray-400);
     line-height: 1.5;
     font-size: 24px;
-    width: 336px;
-    height: 21.669em;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -57%);
+    width: 92%;
+    height: 71.108vh;
 }
 
 #error {
