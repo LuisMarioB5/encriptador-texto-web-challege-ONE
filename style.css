@@ -203,35 +203,33 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 83vh;
     width: 30vw;
     background-color: white;
     border-radius: 32px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    margin-top: -1.3em;
+    margin-top: -1.1em;
 }
 
 #resultado {
-    width: 95%;
-    height: 96%;
     background-color: transparent;
-    border-radius: 32px;
     flex-direction: column;
     align-items: center;
-    margin-top: 1em;
+    margin-top: -1.2vh;
 }
 
 #texto-salida {
     color: var(--gray-400);
     line-height: 1.5;
     font-size: 24px;
-    width: 92%;
+    width: 25vw;
     /*height: 71.108vh; /*valor en la laptop*/
-    height: 65.108vh;
+    height: 65.3vh;
 }
 
 #boton-copiar {
     margin-top: 4.5141vh; /*-43.200*/
+    width: 80%;
 }
 
 #error {
@@ -270,6 +268,32 @@ textarea {
     line-height: 1.5;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1em 0;
+    text-align: center;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+  
+  
+footer section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
 
+.desarrollador p {
+    font-size: 18px;
+    color: var(--dark-blue-300);
+}
 
+.desarrollador p b {
+    font-weight: 550;
+}
 

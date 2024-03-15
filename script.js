@@ -15,6 +15,8 @@ var copiar;
 var img_error;
 var titulo_error;
 var parrafo_error;
+var developer;
+var year;
 
 // Este evento se dispará luego de que todo el contenido HTML este completamente cargado en la página
 document.addEventListener('DOMContentLoaded', function() {
@@ -43,6 +45,8 @@ function cambiar_idioma(boton_presionado) {
     img_error = document.getElementById('img-error');
     titulo_error = document.getElementById('titulo-error')
     parrafo_error = document.getElementById('parrafo-error')
+    developer = document.getElementById('desarrollador')
+    year = document.getElementById('year')
 
     // Vacia la clase 'presionado' para que solo exista un botón en esta clase
     botones_idioma.forEach(function(boton) {
@@ -62,6 +66,7 @@ function cambiar_idioma(boton_presionado) {
         alerta.textContent = 'Solo letras minúsculas y sin acentos';
         encriptar.textContent = 'Encriptar';
         desencriptar.textContent = 'Desencriptar';
+
         if (copiar.textContent === 'Copied Text!') {
             copiar.textContent = 'Texto Copiado!';
         }
@@ -73,6 +78,8 @@ function cambiar_idioma(boton_presionado) {
         img_error.alt = 'Imagen de una mujer tratando de encontrar un diamante.';
         titulo_error.textContent = 'Ningún mensaje fue encontrado';
         parrafo_error.textContent = 'Ingresa el texto que desees encriptar o desencriptar.';
+        developer.innerHTML = '<b>Desarrollado por:</b> Luis Mario Bonilla Madera';
+        year.innerHTML = '<b>Año:</b> 2024';        
     }
 
     // En caso de que el idioma seleccionado sea inglés
@@ -97,6 +104,8 @@ function cambiar_idioma(boton_presionado) {
         img_error.alt = 'Image of a woman trying to find a diamond.';
         titulo_error.textContent = 'No message was found';
         parrafo_error.textContent = 'Enter the text you want to encrypt or decrypt.';
+        developer.innerHTML = '<b>Developed by:</b> Luis Mario Bonilla Madera';
+        year.innerHTML = '<b>Year:</b> 2024';        
     }
 }
 
