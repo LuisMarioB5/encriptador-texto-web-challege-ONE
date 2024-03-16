@@ -72,7 +72,7 @@ function cambiar_idioma(boton_presionado) {
         desencriptar.textContent = 'Desencriptar';
         texto_salida.placeholder = 'Visualización del resultado';
 
-        if (copiar.textContent === 'Copied Text!') {
+        if (copiar.textContent === 'Copied Text!' || copiar.textContent === 'Texto Copiado!') {
             copiar.textContent = 'Texto Copiado!';
         }
         else {
@@ -153,10 +153,21 @@ function copiar_portapapeles() {
     if (idioma === 'es' || idioma === 'pt'){
         button.textContent = 'Texto Copiado!'
     }
-    
     else if (idioma === 'en'){
         button.textContent = 'Copied Text!'
     }
+
+    setTimeout(() => {
+        if (idioma === 'es') {
+            copiar.textContent = 'Copiar';
+        }
+        else if (idioma === 'en') {
+            copiar.textContent = 'Copy';
+        }
+        else if (idioma === 'pt'){
+            copiar.textContent = 'Cópia de';
+        }
+    }, 1000); 
 }
 
 /* ADAPTAR PARA LA ENCRIPTACION */

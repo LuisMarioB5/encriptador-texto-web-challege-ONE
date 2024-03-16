@@ -22,11 +22,17 @@
     --gray-400: #495057;
     --gray-500: #343A40;
 
-    /* Variables para mantener el alineamiento entre la parte izquierda y derecha de la página */
-    --textarea-height: 65.5vh;
+    /* Variables para mantener el alineamiento entre la parte izquierda y derecha del main */
+    --textarea-height: 60vh;
     --margin-top: 1.5vh;
     --margin-bottom: 3vh;
     --gap: 4vh;
+
+    /* Variable para los margenes generales de la página, ademas del margin-left que tiene el h1 y el main. */
+    --margin: 2vw;
+
+    /* Variables para el ancho del logo y el menu de idioma en el caso de desktop*/
+    --width: 10.5vw
 }
 
 /* Estilo de la selección de texto en todos los elementos */
@@ -36,25 +42,27 @@
 }
 
 
-html, body {
+body {
     background-color: var(--light-blue-100);
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
-    width: 94.2vw;
-    top: 3.76175vh;
-    left: 2.7778vw;
+    width: 100vw;
+    margin: var(--margin);
 }
 
 header section {
     text-align: center;
-    width: 10.512vw;
+    width: var(--width);
     height: 48px;
 }
 
@@ -68,27 +76,26 @@ header h1 {
     font-family: Inter;
     font-weight: bold;
     font-size: 32px;
-    
-    width: 80.5vw;
-    margin-left: 3.1vw;
+    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));/*80.5vw;*/
+    margin-left: var(--margin);
 }
 
 #menu-idiomas {
-    position: absolute;
-    height: auto;
-    top: 12.0376vh;
-    left: 2.7778vw;
-    display: flex;
+    justify-content: center;
+    display: inline-flex;
+    margin-left: var(--margin);
+    width: var(--width);
+}
+
+#menu-idiomas nav {
+    width: fit-content;
     padding: 1.5em;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.63em;
     border-radius: 50em;
     background: rgba(255, 255, 255, 0.24);
     box-shadow: 0em 0.5em 1.5em 0em rgba(0, 0, 0, 0.04);
 }
 
-#menu-idiomas section {
+#menu-idiomas nav section {
     position: relative;
     display: flex;
     padding: 1em;
@@ -124,15 +131,12 @@ header h1 {
 }
 
 main {
-    position: relative;
-    top: 5vh;
-    display: flex;
-    width: calc(100vw - 16.6667vw - 3vw);
-    margin-left: 16.6667vw;
-    margin-right: 3vw;
-    flex-wrap: wrap;
+    display: inline-flex;
+    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));
     justify-content: space-between;
-
+    gap: var(--margin);
+    margin-left: var(--margin);
+    margin-right: var(--margin);
 }
 
 #interacion-usuario {
@@ -140,7 +144,7 @@ main {
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    width: 58%;
+    width: 60%;
     margin-top: var(--margin-top);
     margin-bottom: var(--margin-bottom);
     gap: calc((var(--gap)) / 2)
@@ -211,7 +215,7 @@ textarea {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: 30vw;
+    width: 40%;
     background-color: white;
     border-radius: 32px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -246,8 +250,6 @@ textarea {
     align-items: center;
     justify-content: center;
     color: var(--dark-blue-300);
-    
-    border: #052051 1px solid;
 }
 
 #error img {
@@ -279,7 +281,7 @@ footer {
     left: 0;
     width: 100%;
     background-color: white;
-    padding: 1.5vh 0;
+    padding: 1.2vh 0;
     text-align: center;
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
