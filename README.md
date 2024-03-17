@@ -62,3 +62,7 @@ Vista previa del progreso actual del proyecto:
   2. [Cards en Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one)
   3. [Instrucciones del Challenge](Instrucciones_challenge.pdf)
 
+- Artículos adicionales
+  1. [<textarea> | MDN](https://developer.mozilla.org/es/docs/Web/HTML/Element/textarea)
+  2. [Interact with the clipboard | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard)
+  3. [Style display Property | W3 Schools](https://www.w3schools.com/jsref/prop_style_display.asp)
