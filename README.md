@@ -1,6 +1,6 @@
 # Bienvenido/a al Repositorio de mi Encriptador Web
 
-Este repositorio contiene los archivos necesarios para la creación e implementación del encriptador web. El objetivo principal de este proyecto es aplicar los conocimientos que adquirí a lo largo de los cursos que realice en la formación <b>Principiante en Programación G6 - ONE</b>, impartida por el equipo de [Alura LATAM](https://www.aluracursos.com), como parte de mi participación en el programa [ONE](https://www.oracle.com/lad/education/oracle-next-education) (Oracle Next Education).
+Este repositorio contiene los archivos necesarios para la creación e implementación del encriptador web. El objetivo principal de este proyecto es aplicar los conocimientos que adquirí a lo largo de los cursos que realice en la formación **Principiante en Programación G6 - ONE**, impartida por el equipo de [Alura LATAM](https://www.aluracursos.com), como parte de mi participación en el programa [ONE](https://www.oracle.com/lad/education/oracle-next-education) (Oracle Next Education).
 
 El proyecto se encuentra en etapa de desarrollo. Durante esta fase, me encargaré de desarrollar la interfaz gráfica siguiendo los prototipos de pantalla proporcionados en el archivo de [Figma](https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?type=design&node-id=0-1&mode=design&t=CN0oLmGKgNSHYZUe-0) y de crear la lógica correspondiente basándome en las instrucciones detalladas en el archivo con las [instrucciones del challenge](Instrucciones_challenge.pdf) y [Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one), estos archivos son proporcionados por Alura LATAM.
 
@@ -24,15 +24,16 @@ Actualmente, he desarrollado la parte visual para dispositivos de escritorio o l
 - `screenshots`: Carpeta que almacena capturas de pantalla del progreso del proyecto.
 - `LICENSE.md`: Archivo que contiene los términos de la licencia del proyecto.
 - `README.md`: Este archivo, que proporciona una descripción detallada del proyecto y su estructura.
-- `Instrucciones_challenge.pdf`: Instrucciones detalladas proporcionadas por Alura LATAM para el desafío.
+- `instruccionesChallenge.pdf`: Instrucciones detalladas proporcionadas por Alura LATAM para el desafío, en formato pdf.
+- `instruccionesChallenge.md`: Instrucciones detalladas proporcionadas por Alura LATAM para el desafío, en formato de texto, escriot desde la card 'Sobre el desafío', del archivo de Trello.
 - `.gitignore`: Archivo que especifica los archivos y carpetas que deben ignorarse en el control de versiones con Git.
 
 
 ## Tecnologías utilizadas
 
-- <b>HTML</b>: Se implementa de manera que asegure la semántica de la aplicación web, utilizando los elementos HTML de forma apropiada y significativa para estructurar y organizar el contenido.
-- <b>CSS</b>: Se utiliza para el estilado y posicionamiento de los elementos HTML, aplicando reglas de estilo CSS para mejorar la presentación visual de la interfaz de usuario.
-- <b>JavaScript</b>: Desarrollado para la lógica principal del encriptador web, incluyendo la implementación de la lógica de encriptación y desencriptación mediante diccionarios y expresiones regulares. Además, se utiliza para la función de validación que garantiza que el texto a encriptar o desencriptar no contenga mayúsculas ni caracteres especiales.
+- **HTML**: Se implementa de manera que asegure la semántica de la aplicación web, utilizando los elementos HTML de forma apropiada y significativa para estructurar y organizar el contenido.
+- **CSS**: Se utiliza para el estilado y posicionamiento de los elementos HTML, aplicando reglas de estilo CSS para mejorar la presentación visual de la interfaz de usuario.
+- **JavaScript**: Desarrollado para la lógica principal del encriptador web, incluyendo la implementación de la lógica de encriptación y desencriptación mediante diccionarios y expresiones regulares. Además, se utiliza para la función de validación que garantiza que el texto a encriptar o desencriptar no contenga mayúsculas ni caracteres especiales.
 
 
 ## Licencia
@@ -48,7 +49,7 @@ Vista previa del progreso actual del proyecto:
 
 ## Recursos Externos
 
-- <b>Cursos de Alura LATAM:</b>
+- **Cursos de Alura LATAM:**
   1. [Lógica de Programación: sumérgete en la programación con JavaScript](https://www.aluracursos.com/curso-online-logica-programacion-sumergete-programacion-javascript)
   2. [Lógica de programación: explorar funciones y listas](https://www.aluracursos.com/curso-online-logica-programacion-explorar-funciones-listas)
   3. [HTML5 y CSS3 parte 1: Mi primera página web](https://www.aluracursos.com/curso-online-html5-css3-primera-pagina-web)
@@ -57,12 +58,12 @@ Vista previa del progreso actual del proyecto:
   6. [HTML5 y CSS3 parte 4: Avanzando en CSS](https://www.aluracursos.com/curso-online-html5-css3-avanzando-css)
   7. [Git y GitHub: repositorio, commit y versiones](https://www.aluracursos.com/curso-online-git-github-repositorio-commit-versiones)
  
-- <b>Archivos proporcionados por Alura LATAM:</b>
+- **Archivos proporcionados por Alura LATAM:**
   1. [Prototipos de pantallas en Figma](https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?type=design&node-id=0-1&mode=design&t=CN0oLmGKgNSHYZUe-0)
   2. [Cards en Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one)
   3. [Instrucciones del Challenge](Instrucciones_challenge.pdf)
 
-- <b>Artículos adicionales</b>
+- **Artículos adicionales**
   1. [<textarea> | MDN](https://developer.mozilla.org/es/docs/Web/HTML/Element/textarea)
   2. [Interact with the clipboard | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard)
   3. [Style display Property | W3 Schools](https://www.w3schools.com/jsref/prop_style_display.asp)
