@@ -2,48 +2,47 @@
     /* Definición de las variables para los colores de la paleta de colores */
 
     /* Dark blue */
-    --dark-blue-100: #609ED4;
-    --dark-blue-200: #356EA9;
-    --dark-blue-300: #0A3871;
-    --dark-blue-400: #072B61;
-    --dark-blue-500: #052051;
+    --darkBlue100: #609ED4;
+    --darkBlue200: #356EA9;
+    --darkBlue300: #0A3871;
+    --darkBlue400: #072B61;
+    --darkBlue500: #052051;
     
     /* Light blue */
-    --light-blue-100: #F3F5FC;
-    --light-blue-200: #EFF1FA;
-    --light-blue-300: #E9ECF8;
-    --light-blue-400: #AAB2D5;
-    --light-blue-500: #757FB2;
+    --lightBlue100: #F3F5FC;
+    --lightBlue200: #EFF1FA;
+    --lightBlue300: #E9ECF8;
+    --lightBlue400: #AAB2D5;
+    --lightBlue500: #757FB2;
     
     /* Gray */
-    --gray-100: #CED4DA;
-    --gray-200: #ADB5BD;
-    --gray-300: #868E96;
-    --gray-400: #495057;
-    --gray-500: #343A40;
+    --gray100: #CED4DA;
+    --gray200: #ADB5BD;
+    --gray300: #868E96;
+    --gray400: #495057;
+    --gray500: #343A40;
 
     /* Variables para mantener el alineamiento entre la parte izquierda y derecha del main */
-    --textarea-height: 60vh;
-    --margin-top: 1.5vh;
-    --margin-bottom: 3vh;
+    --textareaHeight: 60vh;
+    --marginTop: 1.5vh;
+    --marginBottom: 3vh;
     --gap: 4vh;
 
     /* Variable para los margenes generales de la página, ademas del margin-left que tiene el h1 y el main. */
     --margin: 2vw;
 
-    /* Variables para el ancho del logo y el menu de idioma en el caso de desktop*/
-    --width: 10.5vw
+    /* Variable para el ancho del logo y el menu de idioma en el caso de desktop*/
+    --width: 10.5vw;
 }
 
 /* Estilo de la selección de texto en todos los elementos */
 ::selection {
-    background-color: var(--dark-blue-100); /* Color de fondo de la selección */
-    color: var(--light-blue-100); /* Color del texto seleccionado */
+    background-color: var(--darkBlue100); /* Color de fondo de la selección */
+    color: var(--lightBlue100); /* Color del texto seleccionado */
 }
 
-
 body {
-    background-color: var(--light-blue-100);
+    background-color: var(--lightBlue100);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -72,22 +71,22 @@ header section img {
 }
 
 header h1 {
-    color: var(--dark-blue-300);
+    color: var(--darkBlue300);
     font-family: Inter;
     font-weight: bold;
     font-size: 32px;
-    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));/*80.5vw;*/
+    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));
     margin-left: var(--margin);
 }
 
-#menu-idiomas {
+#menuIdiomas {
     justify-content: center;
     display: inline-flex;
     margin-left: var(--margin);
     width: var(--width);
 }
 
-#menu-idiomas nav {
+#menuIdiomas nav {
     width: fit-content;
     padding: 1.5em;
     border-radius: 50em;
@@ -95,7 +94,7 @@ header h1 {
     box-shadow: 0em 0.5em 1.5em 0em rgba(0, 0, 0, 0.04);
 }
 
-#menu-idiomas nav section {
+#menuIdiomas nav section {
     position: relative;
     display: flex;
     padding: 1em;
@@ -118,16 +117,16 @@ header h1 {
     background-color: transparent;
     font-family: Inter;
     cursor: pointer;
-    color: var(--dark-blue-300);
+    color: var(--darkBlue300);
 }
 
 .idioma.presionado {
-    background-color: var(--dark-blue-300);
+    background-color: var(--darkBlue300);
     color: white;
 }
 
 .idioma:not(.presionado):hover {
-    background-color: var(--light-blue-200);
+    background-color: var(--lightBlue200);
 }
 
 main {
@@ -139,14 +138,14 @@ main {
     margin-right: var(--margin);
 }
 
-#interacion-usuario {
+#interacionUsuario {
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
     width: 60%;
-    margin-top: var(--margin-top);
-    margin-bottom: var(--margin-bottom);
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
     gap: calc((var(--gap)) / 2)
 }
 
@@ -156,18 +155,18 @@ textarea {
     resize: none;
     border: none;
     outline: none;
-    height: var(--textarea-height);
+    height: var(--textareaHeight);
 }
 
-#texto-entrada {
-    color: var(--dark-blue-300);
+#textoEntrada {
+    color: var(--darkBlue300);
     line-height: 1.5;
     font-size: 30px;
     width: 100%; 
 }
 
-#texto-entrada::placeholder {
-    color: var(--dark-blue-200);
+#textoEntrada::placeholder {
+    color: var(--darkBlue200);
 }
 
 #precaucion {
@@ -183,7 +182,7 @@ textarea {
 }
 
 #precaucion p {
-    color: var(--gray-400);
+    color: var(--gray400);
     font-family: Inter;
 }
 
@@ -196,18 +195,18 @@ textarea {
 .boton {
     border-radius: 1.5em;
     font-family: Inter;
-    padding: 2.5078vh;
+    padding: 2.5vh;
     width: 50%;
     font-size: 16px;
     cursor: pointer;
     font-weight: 550;
     background-color: transparent;
-    border: solid 1px var(--dark-blue-300);
-    color: var(--dark-blue-300);
+    border: solid 1px var(--darkBlue300);
+    color: var(--darkBlue300);
 }
 
-#boton-encriptar {
-    background-color: var(--dark-blue-300);
+#botonEncriptar {
+    background-color: var(--darkBlue300);
     color: white;
 }
 
@@ -226,18 +225,18 @@ textarea {
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
-    margin-bottom: var(--margin-bottom);
-    margin-top: var(--margin-top);
+    margin-bottom: var(--marginBottom);
+    margin-top: var(--marginTop);
 }
 
-#texto-salida {
-    color: var(--gray-400);
+#textoSalida {
+    color: var(--gray400);
     line-height: 2;
     font-size: 24px;
     width: 25vw;
 }
 
-#boton-copiar {
+#botonCopiar {
     width: 80%;
 }
 
@@ -249,7 +248,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--dark-blue-300);
+    color: var(--darkBlue300);
 }
 
 #error img {
@@ -287,7 +286,6 @@ footer {
     border-top-right-radius: 2em;
 }
   
-  
 footer section {
     display: flex;
     flex-direction: row;
@@ -297,7 +295,7 @@ footer section {
 
 .desarrollador p {
     font-size: 18px;
-    color: var(--dark-blue-300);
+    color: var(--darkBlue300);
 }
 
 .desarrollador p b {
