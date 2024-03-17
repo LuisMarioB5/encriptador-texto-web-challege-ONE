@@ -22,17 +22,22 @@
     --gray400: #495057;
     --gray500: #343A40;
 
+    /* Variable para los margenes generales de la página, ademas del margin-left que tiene el h1 y el main. */
+    --marginLeftRigth: 2vw;
+    --marginTopBottom: 3vh;
+
+    /* Variable para el ancho del logo y el menu de idioma en el caso de desktop*/
+    --width: 10.5vw;
+
     /* Variables para mantener el alineamiento entre la parte izquierda y derecha del main */
     --textareaHeight: 60vh;
     --marginTop: 1.5vh;
     --marginBottom: 3vh;
     --gap: 4vh;
 
-    /* Variable para los margenes generales de la página, ademas del margin-left que tiene el h1 y el main. */
-    --margin: 2vw;
 
-    /* Variable para el ancho del logo y el menu de idioma en el caso de desktop*/
-    --width: 10.5vw;
+    /* Ancho del H1 del header y el Main */
+    --widthH1Main: calc(100vw - var(--width) - calc(var(--marginLeftRigth) * 3));
 }
 
 /* Estilo de la selección de texto en todos los elementos */
@@ -56,7 +61,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     width: 100vw;
-    margin: var(--margin);
+    margin: var(--marginTopBottom) var(--marginLeftRigth);
 }
 
 header section {
@@ -75,14 +80,14 @@ header h1 {
     font-family: Inter;
     font-weight: bold;
     font-size: 32px;
-    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));
-    margin-left: var(--margin);
+    width: var(--widthH1Main);
+    margin-left: var(--marginLeftRigth);
 }
 
 #menuIdiomas {
     justify-content: center;
     display: inline-flex;
-    margin-left: var(--margin);
+    margin-left: var(--marginLeftRigth);
     width: var(--width);
 }
 
@@ -131,11 +136,10 @@ header h1 {
 
 main {
     display: inline-flex;
-    width: calc(100vw - var(--width) - var(--margin) - var(--margin) - var(--margin));
+    width: var(--widthH1Main);
     justify-content: space-between;
-    gap: var(--margin);
-    margin-left: var(--margin);
-    margin-right: var(--margin);
+    gap: var(--marginLeftRigth);
+    margin: 0 var(--marginLeftRigth);
 }
 
 #interacionUsuario {
@@ -225,15 +229,16 @@ textarea {
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
-    margin-bottom: var(--marginBottom);
-    margin-top: var(--marginTop);
+    width: 100%;
+    margin: var(--marginTop) var(--marginLeftRigth) var(--marginBottom);
+
 }
 
 #textoSalida {
     color: var(--gray400);
     line-height: 2;
     font-size: 24px;
-    width: 25vw;
+    width: 100%;
 }
 
 #botonCopiar {

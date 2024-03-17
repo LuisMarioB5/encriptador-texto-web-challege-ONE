@@ -32,6 +32,15 @@ var footerStyles;
 var developer;
 var year;
 
+// Variable para almacenar las 'claves' de la encriptación
+const palabrasReemplazar = {
+    'a': 'ai',
+    'e': 'enter',
+    'i': 'imes',
+    'o': 'ober',
+    'u': 'ufat'
+};
+
 // Este evento se dispará luego de que todo el contenido HTML este completamente cargado en la página
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona el primer botón con la clase 'idioma'
@@ -272,39 +281,33 @@ function validar(texto) {
     // Verificar si el párrafo contiene solo letras minúsculas, espacios y saltos de línea, de ser así devuelve true, de lo contrario false
     return expresionRegular.test(texto);
 }
-
-let texto = 'luis';
-
-if (validar(texto) === true) {
-    console.log('true')
-}
-else {
-    console.log('false')
-}
   
 /* ADAPTAR PARA LA ENCRIPTACION */
 function encriptarMensaje() {
     let textoEncriptar = textoEntrada.value;
+    let textoEncriptado = '';
 
     if (validar(textoEncriptar) === true){
-        console.log('true')
+        //console.log('true')
 
-        if (idioma === 'es') {
-            tituloError.textContent = mensajeUsuario.es.normal.titulo;
-            parrafoError.textContent = mensajeUsuario.es.normal.parrafo;
-        } 
-        else if (idioma === 'en') {
-            tituloError.textContent = mensajeUsuario.en.normal.titulo;
-            parrafoError.textContent = mensajeUsuario.en.normal.parrafo;
-        }
-        else if (idioma === 'pt') {
-            tituloError.textContent = mensajeUsuario.pt.normal.titulo;
-            parrafoError.textContent = mensajeUsuario.pt.normal.parrafo;
+        // Crear una expresion regular, donde se obtienen las claves del diccionario 'palabrasReemplazar'
+        let claves = new RegExp(Object.keys(palabrasReemplazar).join("|"), "gi");
+
+        // Función para obtener el valor dependiendo la clave del diccionario 'palabrasReemplazar'
+        function valor(match) {
+            return palabrasReemplazar[match.toLowerCase()];
         }
 
-        // Cuando crees la lógica para la encriptación debes colocarla en este bloque if, lo que esta arriba lo puedes eliminar e implementarla hay, RECUEDA DESCOMENTAR ESTAS DOS LINEAS DE CODIGO PARA HACER EL CAMBIO PARA MOSTRAR EL RESULTADO Y OCULTAR LA VENTANA DE MENSAJES.
-        //error.style.display = 'none'; // Ocultar el error
-        //resultado.style.display = 'flex'; // Mostrar el resultado
+        // Se realiza el remplazo en el texto de la variable 'textoEncriptar'
+        textoEncriptado = textoEncriptar.replace(claves, valor)
+
+        //console.log('\nTexto Encriptado:', textoEncriptado)
+
+        // Muestra el resultado de la encriptación al usuario
+        textoSalida.textContent = textoEncriptado;
+        
+        error.style.display = 'none'; // Ocultar el error
+        resultado.style.display = 'flex'; // Mostrar el resultado
     }
     else {
         //console.log('false')
@@ -324,33 +327,63 @@ function encriptarMensaje() {
 
         resultado.style.display = 'none'; // Ocultar el resultado
         error.style.display = 'flex'; // Mostrar el error
-
-    }
-
-    if (idioma === 'es') {
-        copiar.textContent = 'Si Señor!!!';
-    }
-    else if (idioma === 'en') {
-        copiar.textContent = 'Yessir!!!';
-    }
-    else if (idioma === 'pt') {
-        copiar.textContent = 'Sim senhor!!!';
     }
 }
 
 /* ADAPTAR PARA LA DESENCRIPTACION */
 function desencriptarMensaje() {
-    
-    // Obtener el estilo computado del elemento resultado
-    var resultadoStyle = window.getComputedStyle(resultado);
+    let textoDesencriptar = textoEntrada.value;
+    let textoDesencriptado = '';
 
-    // Verificar la visibilidad del elemento resultado
-    if (resultadoStyle.display === 'none') {
-        resultado.style.display = 'flex'; // Mostrar el resultado
+
+    if (validar(textoDesencriptar) === true){
+        // Se invierte el diccionario 'palabrasReemplazar' para que las claves sean los valores y viceversa
+        const palabrasReemplazarInvertidas = {};
+        for (let clave in palabrasReemplazar) {
+            const valor = palabrasReemplazar[clave];
+            palabrasReemplazarInvertidas[valor] = clave;
+        }
+    
+        //console.log('Diccionario "palabrasReemplazar":', palabrasReemplazar)
+        //console.log('Diccionario "palabrasReemplazarInvertidas":', palabrasReemplazarInvertidas)
+    
+    
+        // Crear una expresion regular, donde se obtienen las claves del diccionario 'palabrasReemplazarInvertidas'
+        let claves = new RegExp(Object.keys(palabrasReemplazarInvertidas).join("|"), "gi");
+        
+        // Función para obtener el valor dependiendo la clave del diccionario 'palabrasReemplazarInvertidas'
+        function valor(match) {
+            return palabrasReemplazarInvertidas[match.toLowerCase()];
+        }
+        
+        // Se realiza el remplazo en el texto de la variable 'textoEncriptar'
+        textoDesencriptado = textoDesencriptar.replace(claves, valor);
+        //console.log('\nTexto Desencriptado:', textoDesencriptado);
+    
+        // Muestra el resultado de la desencriptación al usuario
+        textoSalida.textContent = textoDesencriptado;
+        
         error.style.display = 'none'; // Ocultar el error
-    } else {
-        error.style.display = 'flex'; // Mostrar el error
+        resultado.style.display = 'flex'; // Mostrar el resultado
+    }
+    else {
+        //console.log('false')
+
+        if (idioma === 'es') {
+            tituloError.textContent = mensajeUsuario.es.error.titulo;
+            parrafoError.textContent = mensajeUsuario.es.error.parrafo;
+        } 
+        else if (idioma === 'en') {
+            tituloError.textContent = mensajeUsuario.en.error.titulo;
+            parrafoError.textContent = mensajeUsuario.en.error.parrafo;
+        }
+        else if (idioma === 'pt') {
+            tituloError.textContent = mensajeUsuario.pt.error.titulo;
+            parrafoError.textContent = mensajeUsuario.pt.error.parrafo;
+        }
+
         resultado.style.display = 'none'; // Ocultar el resultado
+        error.style.display = 'flex'; // Mostrar el error
     }
 }
 
@@ -498,6 +531,6 @@ function textareaResize() {
         textarea.style.height = `calc(100vh - ${newtextoEntradaHeight}px)`;
     });
     
-    console.log(`Altura de los elementos de la página menos la del textarea 'textoEntrada': ${newtextoEntradaHeight}`)
-    console.log(`header: ${headerTotalHeight} \n-\n footer: ${footerTotalHeight} \n-\n interacionUsuarioTop: ${interacionUsuarioMarginTop} \n-\n interacionUsuarioBottom: ${interacionUsuarioMarginBottom} \n-\n textoEntradaGap: ${textoEntradaGap} \n-\n encriptar: ${encriptarTotalHeight}`)
+    //console.log(`Altura de los elementos de la página menos la del textarea 'textoEntrada': ${newtextoEntradaHeight}`)
+    //console.log(`header: ${headerTotalHeight} \n-\n footer: ${footerTotalHeight} \n-\n interacionUsuarioTop: ${interacionUsuarioMarginTop} \n-\n interacionUsuarioBottom: ${interacionUsuarioMarginBottom} \n-\n textoEntradaGap: ${textoEntradaGap} \n-\n encriptar: ${encriptarTotalHeight}`)
 }
