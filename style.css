@@ -307,3 +307,83 @@ footer section {
     font-weight: 550;
 }
 
+
+/* Estilos para tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+        margin: var(--marginTopBottom) calc(var(--marginLeftRigth) * 1.96);
+    }
+    
+    header section {
+        text-align: center;
+        width: auto;
+        height: 50.5px;
+    }
+    
+    header section img {
+        width: 31px;
+        height: 50.5px;
+    }
+    
+    header h1 {
+        font-size: 28px;
+        width: auto;
+        margin-left: var(--marginLeftRigth);
+    }
+
+    /* DESDE AQUI PARA ABAJO ==> ADAPTAR PARA LA PANTALLA */    
+    #menuIdiomas {
+        justify-content: center;
+        display: inline-flex;
+        margin-left: var(--marginLeftRigth);
+        width: var(--width);
+    }
+
+    #menuIdiomas nav {
+        width: fit-content;
+        padding: 1.5em;
+        border-radius: 50em;
+        background: rgba(255, 255, 255, 0.24);
+        box-shadow: 0em 0.5em 1.5em 0em rgba(0, 0, 0, 0.04);
+    }
+
+    #menuIdiomas nav section {
+        position: relative;
+        display: flex;
+        padding: 1em;
+        max-height: 12em;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        overflow-y: auto;
+        border-radius: 50em;
+        background: white;
+    }
+
+    .idioma {
+        width: 2.5em;
+        height: 2.5em;
+        border: none;
+        border-radius: 50%;
+        font-size: 1em;
+        font-weight: normal;
+        background-color: transparent;
+        font-family: Inter;
+        cursor: pointer;
+        color: var(--darkBlue300);
+    }
+
+    .idioma.presionado {
+        background-color: var(--darkBlue300);
+        color: white;
+    }
+
+    .idioma:not(.presionado):hover {
+        background-color: var(--lightBlue200);
+    }
+
+}
