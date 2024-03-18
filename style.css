@@ -35,10 +35,10 @@
     --marginBottom: 3vh;
     --gap: 4vh;
 
-
     /* Ancho del H1 del header y el Main */
     --widthH1Main: calc(100vw - var(--width) - calc(var(--marginLeftRigth) * 3));
 }
+
 
 /* Estilo de la selección de texto en todos los elementos */
 ::selection {
@@ -225,13 +225,12 @@ textarea {
 }
 
 #resultado {
+    margin: var(--marginTop) var(--marginLeftRigth) var(--marginBottom);
     background-color: transparent;
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
     width: 100%;
-    margin: var(--marginTop) var(--marginLeftRigth) var(--marginBottom);
-
 }
 
 #textoSalida {
@@ -310,80 +309,217 @@ footer section {
 
 /* Estilos para tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    header {
-        display: flex;
+    body {
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
+        height: auto;
         width: auto;
-        margin: var(--marginTopBottom) calc(var(--marginLeftRigth) * 1.96);
+    }
+    
+    header {
+        width: auto;
+        margin-top: calc(var(--marginTopBottom) * 1.5);
+        margin-bottom: calc(var(--marginTopBottom) * .5);
+        margin-left: calc(var(--marginLeftRigth)* 2);
     }
     
     header section {
-        text-align: center;
         width: auto;
         height: 50.5px;
     }
     
     header section img {
-        width: 31px;
         height: 50.5px;
     }
     
     header h1 {
-        font-size: 28px;
-        width: auto;
-        margin-left: var(--marginLeftRigth);
+        display: none;
     }
 
-    /* DESDE AQUI PARA ABAJO ==> ADAPTAR PARA LA PANTALLA */    
     #menuIdiomas {
-        justify-content: center;
-        display: inline-flex;
-        margin-left: var(--marginLeftRigth);
-        width: var(--width);
+        margin-right: calc(var(--marginTopBottom) * .8);
+        margin-left: 0;
+        width: fit-content;
+        margin-top: calc(var(--marginTopBottom) * .8);
     }
 
     #menuIdiomas nav {
-        width: fit-content;
-        padding: 1.5em;
-        border-radius: 50em;
-        background: rgba(255, 255, 255, 0.24);
-        box-shadow: 0em 0.5em 1.5em 0em rgba(0, 0, 0, 0.04);
-    }
-
-    #menuIdiomas nav section {
-        position: relative;
-        display: flex;
         padding: 1em;
-        max-height: 12em;
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-        overflow-y: auto;
-        border-radius: 50em;
-        background: white;
+    }
+    
+    #menuIdiomas nav section {
+        padding: .5em;
+        flex-direction: row;
+        gap: .5em;
     }
 
     .idioma {
-        width: 2.5em;
-        height: 2.5em;
-        border: none;
-        border-radius: 50%;
-        font-size: 1em;
-        font-weight: normal;
-        background-color: transparent;
-        font-family: Inter;
-        cursor: pointer;
-        color: var(--darkBlue300);
+        font-size: 14px;
     }
 
-    .idioma.presionado {
-        background-color: var(--darkBlue300);
-        color: white;
+    main {
+        margin: 0 calc(var(--marginLeftRigth) * 5.5) calc(var(--marginLeftRigth) * 2);
+        gap: var(--marginBottom);
+        flex-direction: column;
+        width: 100%;
     }
 
-    .idioma:not(.presionado):hover {
-        background-color: var(--lightBlue200);
+    #interacionUsuario {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    #textoEntrada {
+        font-size: 28px;
     }
 
+    #botones {
+        justify-content: center;
+        gap: 5vw;
+    }
+    
+    .boton {
+        padding: 25px;
+        width: 35%;
+    }
+    
+    #resultados {
+        width: 100%;
+    }
+
+    #resultado {
+        gap: 0;
+    }
+
+    #textoSalida {
+        max-height: 150px;
+    }
+
+    #botonCopiar {
+        width: 40%;
+    }
+
+    #error {
+        width: 100%;
+        margin: var(--marginLeftRigth);
+    }
+
+    #error img {
+        display: none;
+    }
+
+    footer {
+        position: relative;
+        padding: 2vh 0;
+    }
 }
+
+/* ADAPTAR PARA QUE SE PAREZCA AL DE FIGMA */
+/* Estilos para celulares */
+/*
+@media only screen and (max-width: 600px) {
+    body {
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        width: auto;
+    }
+    
+    header {
+        width: auto;
+        margin-top: calc(var(--marginTopBottom) * 1.5);
+        margin-bottom: calc(var(--marginTopBottom) * .5);
+        margin-left: calc(var(--marginLeftRigth)* 2);
+    }
+    
+    header section {
+        width: auto;
+        height: 50.5px;
+    }
+    
+    header section img {
+        height: 50.5px;
+    }
+    
+    header h1 {
+        display: none;
+    }
+
+    #menuIdiomas {
+        margin-right: calc(var(--marginTopBottom) * .8);
+        margin-left: 0;
+        width: fit-content;
+        margin-top: calc(var(--marginTopBottom) * .8);
+    }
+
+    #menuIdiomas nav {
+        padding: 1em;
+    }
+    
+    #menuIdiomas nav section {
+        padding: .5em;
+        flex-direction: row;
+        gap: .5em;
+    }
+
+    .idioma {
+        font-size: 14px;
+    }
+
+    main {
+        margin: 0 calc(var(--marginLeftRigth) * 5.5) calc(var(--marginLeftRigth) * 2);
+        gap: var(--marginBottom);
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #interacionUsuario {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    #textoEntrada {
+        font-size: 28px;
+    }
+
+    #botones {
+        justify-content: center;
+        gap: 5vw;
+    }
+    
+    .boton {
+        padding: 25px;
+        width: 35%;
+    }
+    
+    #resultados {
+        width: 100%;
+    }
+
+    #resultado {
+        gap: 0;
+    }
+
+    #textoSalida {
+        max-height: 150px;
+    }
+
+    #botonCopiar {
+        width: 40%;
+    }
+
+    #error {
+        width: 100%;
+        margin: var(--marginLeftRigth);
+    }
+
+    #error img {
+        display: none;
+    }
+
+    footer {
+        position: relative;
+        padding: 2vh 0;
+    }
+}
+*/

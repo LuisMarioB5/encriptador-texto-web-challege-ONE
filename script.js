@@ -1,9 +1,6 @@
 // Variable para almacenar el idioma actual de la página
 var idioma;
 
-// Variable para almacenar los mensajes que se les mostran al usuario mediante el article 'error'
-var mensajeUsuario;
-
 // Definición de los elementos HTML, utilizando el DOM
 var header;
 var headerStyles;
@@ -32,6 +29,44 @@ var footerStyles;
 var developer;
 var year;
 
+// Variables sobre el 'main' para la toma de decisiones dependiendo su 'flex-direction'
+var main;
+var flexDirection;
+
+// Objeto anidado para almacenar los dos posibles juegos de pares (título, párrafo) dependiendo el idioma
+var mensajeUsuario = {
+    es: {
+        normal: {
+            titulo: 'Deseas encriptar algún texto?',
+            parrafo: 'Colócalo en la parte izquierda y dale al botón "Encriptar"'
+        },
+        error: {
+            titulo: 'Revisa el párrafo y vuelve a intentar',
+            parrafo: 'Debido a que contiene letras mayúsculas o caracteres especiales.'
+        }
+    },
+    en: {
+        normal: {
+            titulo: 'Do you want to encrypt some text?',
+            parrafo: 'Place it on the left side and click the "Encrypt" button'
+        },
+        error: {
+            titulo: 'Check the paragraph and try again',
+            parrafo: 'Because it contains capital letters or special characters.'
+        }
+    },
+    pt: {
+        normal: {
+            titulo: 'Você quer criptografar algum texto?',
+            parrafo: 'Coloque-o no lado esquerdo e clique no botão "Criptografar"'
+        },
+        error: {
+            titulo: 'Verifique o parágrafo e tente novamente',
+            parrafo: 'Porque contém letras maiúsculas ou caracteres especiais.'
+        }
+    },
+};
+
 // Variable para almacenar las 'claves' de la encriptación
 const palabrasReemplazar = {
     'a': 'ai',
@@ -42,58 +77,31 @@ const palabrasReemplazar = {
 };
 
 // Este evento se dispará luego de que todo el contenido HTML este completamente cargado en la página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {    
     // Selecciona el primer botón con la clase 'idioma'
     let idiomaPredeterminado = document.querySelector('.idioma');
-
+    
     // Llama a la función cambiaIdioma para seleccionar el idioma del primer botón
-    cambiarIdioma(idiomaPredeterminado);
+    cambiarIdioma(idiomaPredeterminado);    
     
     // Llama a la función textareaResize para establecer el tamaño correcto de los textareas
-    textareaResize();
+    textareaResize()
 
+    // Comprobar el flex-direction del main para saber si se debe modificar el mensaje que se le muestra al usuario
+    if (flexDirection === 'column') {
+        mensajeUsuario.es.normal.parrafo = 'Colócalo en la parte superior y dale al botón "Encriptar"';
+        mensajeUsuario.en.normal.parrafo = 'Place it at the top and click the "Encrypt" button';
+        mensajeUsuario.pt.normal.parrafo = 'Coloque-o no topo e clique no botão "Criptografar"';
+        
+        // Volver a llamar la función 'cambiarIdioma' para que se pueda renderizar las modificaciones
+        cambiarIdioma(idiomaPredeterminado);    
+    }
 });
 
 // Función para cambiar el idioma de los elementos de la página
 function cambiarIdioma(botonPresionado) {
     // Transformando el valor del boton a minúsculas (lowercase)
     idioma = botonPresionado.textContent.toLowerCase();
-
-    // Objeto anidado para almacenar los dos posibles juegos de pares (título, párrafo) dependiendo el idioma
-    mensajeUsuario = {
-        es: {
-            normal: {
-                titulo: 'Deseas encriptar algún texto?',
-                parrafo: 'Colócalo en la parte izquierda y dale al botón "Encriptar"'
-            },
-            error: {
-                titulo: 'Revisa el párrafo y vuelve a intentar',
-                parrafo: 'Debido a que contiene letras mayúsculas o caracteres especiales.'
-            }
-        },
-
-        en: {
-            normal: {
-                titulo: 'Do you want to encrypt some text?',
-                parrafo: 'Place it on the left side and click the "Encrypt" button'
-            },
-            error: {
-                titulo: 'Check the paragraph and try again',
-                parrafo: 'Because it contains capital letters or special characters.'
-            }
-        },
-
-        pt: {
-            normal: {
-                titulo: 'Você quer criptografar algum texto?',
-                parrafo: 'Coloque-o no lado esquerdo e clique no botão "Criptografar"'
-            },
-            error: {
-                titulo: 'Verifique o parágrafo e tente novamente',
-                parrafo: 'Porque contém letras maiúsculas ou caracteres especiais.'
-            }
-        },
-    };
 
     // Almacenando los selectores en variables
     logo = document.getElementById('logo');
@@ -196,7 +204,6 @@ function cambiarIdioma(botonPresionado) {
             parrafoError.textContent = mensajeUsuario.en.normal.parrafo;
         }
 
-
         developer.innerHTML = '<b>Developed by:</b> Luis Mario Bonilla Madera';
         year.innerHTML = '<b>Year:</b> 2024';        
     }
@@ -235,7 +242,6 @@ function cambiarIdioma(botonPresionado) {
         else {
             parrafoError.textContent = mensajeUsuario.pt.normal.parrafo;
         }
-
         
         developer.innerHTML = '<b>Desenvolvido por:</b> Luis Mario Bonilla Madera';
         year.innerHTML = '<b>Ano:</b> 2024';        
@@ -282,7 +288,7 @@ function validar(texto) {
     return expresionRegular.test(texto);
 }
   
-/* ADAPTAR PARA LA ENCRIPTACION */
+// Función que emplea la lógica de encriptación empleando un diccionario y expresiones regulares
 function encriptarMensaje() {
     let textoEncriptar = textoEntrada.value;
     let textoEncriptado = '';
@@ -330,11 +336,10 @@ function encriptarMensaje() {
     }
 }
 
-/* ADAPTAR PARA LA DESENCRIPTACION */
+// Función que emplea la lógica de desencriptación empleando el diccionario (de la encripción) inverso y expresiones regulares
 function desencriptarMensaje() {
     let textoDesencriptar = textoEntrada.value;
     let textoDesencriptado = '';
-
 
     if (validar(textoDesencriptar) === true){
         // Se invierte el diccionario 'palabrasReemplazar' para que las claves sean los valores y viceversa
@@ -346,7 +351,6 @@ function desencriptarMensaje() {
     
         //console.log('Diccionario "palabrasReemplazar":', palabrasReemplazar)
         //console.log('Diccionario "palabrasReemplazarInvertidas":', palabrasReemplazarInvertidas)
-    
     
         // Crear una expresion regular, donde se obtienen las claves del diccionario 'palabrasReemplazarInvertidas'
         let claves = new RegExp(Object.keys(palabrasReemplazarInvertidas).join("|"), "gi");
@@ -408,7 +412,6 @@ function textareaResize() {
     let textoEntradaMarginBottom;
     let textoEntradaTotalHeight;
     
-
     encriptarStyles = getComputedStyle(encriptar);
     encriptarHeight = encriptar.getBoundingClientRect().height;
     let encriptarMarginTop;
@@ -524,12 +527,21 @@ function textareaResize() {
     // Variable con la sumatoria de todas las alturas de los elementos de la página menos la del propio <textarea>
     const newtextoEntradaHeight = headerTotalHeight + headerMarginTop + footerTotalHeight + (interacionUsuarioMarginTop * 2) + interacionUsuarioMarginBottom + textoEntradaGap + encriptarTotalHeight;
 
-
-    // Itera sobre cada elemento <textarea>
-    textareas.forEach(textarea => {
-        // Aplica una nueva altura al textarea
-        textarea.style.height = `calc(100vh - ${newtextoEntradaHeight}px)`;
-    });
+    // Variables para obtener el main y su flex-direction
+    main = document.querySelector('main');
+    flexDirection = window.getComputedStyle(main).getPropertyValue('flex-direction');
+    
+    // Si el flex-direction es 'row' aplicara el tamaño del textarea a ambos de lo contrario solo al 'textoEntrada'
+    if (flexDirection === 'row') {
+        // Itera sobre cada elemento <textarea>
+        textareas.forEach(textarea => {
+            // Aplica una nueva altura al textarea
+            textarea.style.height = `calc(100vh - ${newtextoEntradaHeight}px)`;
+        });
+    }
+    else {
+        textoEntrada.style.height = `calc(100vh - ${newtextoEntradaHeight}px)`;
+    }
     
     //console.log(`Altura de los elementos de la página menos la del textarea 'textoEntrada': ${newtextoEntradaHeight}`)
     //console.log(`header: ${headerTotalHeight} \n-\n footer: ${footerTotalHeight} \n-\n interacionUsuarioTop: ${interacionUsuarioMarginTop} \n-\n interacionUsuarioBottom: ${interacionUsuarioMarginBottom} \n-\n textoEntradaGap: ${textoEntradaGap} \n-\n encriptar: ${encriptarTotalHeight}`)
