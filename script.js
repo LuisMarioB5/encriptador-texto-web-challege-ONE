@@ -33,6 +33,10 @@ var year;
 var main;
 var flexDirection;
 
+// Variable para mostrar y ocultar el menú de idiomas en la versión de celulares
+var contador = 0;
+
+
 // Objeto anidado para almacenar los dos posibles juegos de pares (título, párrafo) dependiendo el idioma
 var mensajeUsuario = {
     es: {
@@ -543,6 +547,78 @@ function textareaResize() {
         textoEntrada.style.height = `calc(100vh - ${newtextoEntradaHeight}px)`;
     }
     
+    let ancho = document.documentElement.clientWidth;
+    
+    // Si el dispositivo es una celular el textoEntrada será un poco más grande
+    if (ancho <= 600){
+        textoEntrada.style.height = `calc(100vh - ${newtextoEntradaHeight}px + 30px)`;
+
+    }
+
     //console.log(`Altura de los elementos de la página menos la del textarea 'textoEntrada': ${newtextoEntradaHeight}`)
     //console.log(`header: ${headerTotalHeight} \n-\n footer: ${footerTotalHeight} \n-\n interacionUsuarioTop: ${interacionUsuarioMarginTop} \n-\n interacionUsuarioBottom: ${interacionUsuarioMarginBottom} \n-\n textoEntradaGap: ${textoEntradaGap} \n-\n encriptar: ${encriptarTotalHeight}`)
 }
+
+function verMenuIdiomas() {
+    const menu = document.getElementById('menu');
+    const menuHijos = menu.children;
+    const menuIdiomas = document.getElementById('menuIdiomas');
+    const botonES = document.querySelector('.idioma:first-child');
+    const botonEN = document.querySelector('.idioma:nth-child(2)');
+    const botonPT = document.querySelector('.idioma:nth-child(3)');
+
+
+    if (contador === 0) {
+
+        // Centra el contenido del menú luego de que se le da click
+        menu.style.justifyContent = 'center';
+        menu.style.alignContent = 'center';
+    
+        /* Transforma el primer hijo */
+        menuHijos[0].style.transform = 'rotate(-45deg)';
+        menuHijos[0].style.transition = 'transform .8s ease-out';
+        
+        /* Oculta el seugndo hijo */
+        menuHijos[1].style.display = 'none';
+        
+        /* Transforma el tercer hijo */
+        menuHijos[2].style.position = 'absolute';
+        menuHijos[2].style.width = '45px';
+        menuHijos[2].style.left = '50%';
+        menuHijos[2].style.top = '50%';
+        menuHijos[2].style.transform = 'rotate(45deg) translate(-50%, -50%)';
+        menuHijos[2].style.transition = 'transform .8s ease-out';
+
+        botonES.disabled = false;
+        botonEN.disabled = false;
+        botonPT.disabled = false;
+
+        menuIdiomas.style.visibility = 'visible';
+        menuIdiomas.style.opacity = 1;
+        menuIdiomas.style.transition = 'opacity .5s ease-out';
+
+        // Igualamos el contador a 1, de manera que la próxima vez se restablezca a como era la inicio (oculte el menú de idiomas)
+        contador = 1;
+    }
+    // Colocar los estilos anteriores
+    else {
+        botonES.disabled = true;
+        botonEN.disabled = true;
+        botonPT.disabled = true;
+
+        // Restablecimiento del menú
+        menu.removeAttribute('style');
+
+        // Restableciendo los estilos de los hijos del menú
+        for (const hijo of menuHijos){
+            hijo.removeAttribute('style');
+        }
+    
+        menuIdiomas.style.opacity = 0;
+        menuIdiomas.style.transition = 'opacity .5s ease-out';
+
+        // Iguala el contador a 0 para que la próxima vez muestre el menú de idiomas
+        contador = 0;
+    }
+}
+

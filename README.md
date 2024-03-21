@@ -1,69 +1,64 @@
-# Bienvenido/a al Repositorio de mi Encriptador Web
+# Encriptador Web: Proyecto Finalizado
 
-Este repositorio contiene los archivos necesarios para la creación e implementación del encriptador web. El objetivo principal de este proyecto es aplicar los conocimientos que adquirí a lo largo de los cursos que realice en la formación **Principiante en Programación G6 - ONE**, impartida por el equipo de [Alura LATAM](https://www.aluracursos.com), como parte de mi participación en el programa [ONE](https://www.oracle.com/lad/education/oracle-next-education) (Oracle Next Education).
+¡Bienvenido/a al repositorio del Encriptador Web! Este proyecto es el resultado de mi participación en el programa **Principiante en Programación G6 - ONE**, ofrecido por [Alura LATAM](https://www.aluracursos.com) en colaboración con [Oracle Next Education](https://www.oracle.com/lad/education/oracle-next-education). Aquí encontrarás todos los recursos y el código fuente necesario para implementar y comprender el funcionamiento de este encriptador de texto.
 
-El proyecto se encuentra en etapa de desarrollo. Durante esta fase, me encargaré de desarrollar la interfaz gráfica siguiendo los prototipos de pantalla proporcionados en el archivo de [Figma](https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?type=design&node-id=0-1&mode=design&t=CN0oLmGKgNSHYZUe-0) y de crear la lógica correspondiente basándome en las instrucciones detalladas en el archivo con las [instrucciones del challenge](Instrucciones_challenge.pdf) y [Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one), estos archivos son proporcionados por Alura LATAM.
+## Acerca del Proyecto
 
-Actualmente, he desarrollado la parte visual para dispositivos de escritorio o laptops y tablets, tengo planeado hacerlo aún más responsivo para pequeños dispositivos móviles (celulares inteligentes). Ya se encuentra totalmente funcional en las plataformas de escritorio o laptops y tablets.
+El Encriptador Web es una aplicación diseñada para cifrar y descifrar mensajes utilizando un algoritmo de encriptación básico. La interfaz y la lógica del proyecto se desarrollaron siguiendo las especificaciones del [desafío propuesto por Alura LATAM](https://www.aluracursos.com/challenges/challenge-one-logica/sprint01-construye-un-encriptador-texto-con-javascript), utilizando prototipos de diseño en Figma y una serie de instrucciones detalladas para cumplir con los objetivos de aprendizaje establecidos.
 
+### Características Destacadas
 
-## Características Principales
+- **Interfaz Responsiva**: Optimizada para escritorio, laptops, tablets y dispositivos móviles, garantizando una experiencia de usuario excelente en cualquier dispositivo.
+- **Soporte Multilenguaje**: Disponible en español, inglés y portugués, facilitando su uso a usuarios de diversas regiones.
+- **Seguridad de Datos**: Implementa un sistema de encriptación y desencriptación robusto, con validaciones para asegurar que el texto ingresado sea válido (sin mayúsculas ni caracteres especiales).
 
-  - Se ha desarrollado una interfaz gráfica basada en los prototipos proporcionados por Alura LATAM, diseñados en Figma. La interfaz actualmente está diseñada para dispositivos de escritorio o laptops.
-  - Lógica de encriptación y desencriptación utilizando diccionarios y expresiones regulares en JavaScript. Además, de la utilización de una función de validación para garantizar que el texto a encriptar o desencriptar no contenga mayúsculas ni caracteres especiales.
-  - Se ha incluido la opción para cambiar el idioma de la interfaz entre español, inglés y portugués.
+### Tecnologías Implementadas
 
+- **HTML5**: Proporciona una estructura semántica clara y accesible.
+- **CSS3**: Ofrece estilos avanzados y diseño responsivo.
+- **JavaScript (ES6+)**: Encargado de la lógica de encriptación/desencriptación y la interactividad de la interfaz.
 
-## Diseño responsivo
+## Estructura del Repositorio
 
-Las pruebas de la aplicación web se realizaron con éxito en las siguientes plataformas:
-  - Escritorio y laptop (1025px - 1440px)
-  - Tablet (601px - 1024px)
+Aquí una breve descripción de los componentes principales del proyecto:
 
-Falta desarrollar para esta plataforma:
-  - Celular (Máx.: 600px)
+- `index.html`: Punto de entrada de la aplicación. Establece la estructura básica del sitio.
+- `style.css` y `reset.css`: Archivos CSS para estilos y normalización entre navegadores.
+- `script.js`: Contiene la lógica principal de encriptación, desencriptación y validaciones.
+- `img/`: Directorio para las imágenes utilizadas en la aplicación.
+- `screenshots/`: Capturas de pantalla que muestran el diseño responsivo en diferentes dispositivos.
+- `LICENSE.md`: Información sobre la licencia bajo la cual se distribuye el proyecto.
+- `README.md`: Documentación del proyecto (este archivo).
+- `instruccionesChallenge` (`.pdf` y `.md`): Instrucciones detalladas del desafío.
 
+## Vista Previa del Proyecto
 
-## Estructura del proyecto
+A continuación, algunas imágenes representativas del proyecto en distintos dispositivos:
 
-  - [`index.html`](index.html): Página principal de la aplicación, donde se define la estructura y contenido básico del sitio.
-  - [`style.css`](style.css): Archivo que contiene las reglas de estilo CSS aplicadas a la interfaz de usuario para mejorar su apariencia y presentación.
-  - [`reset.css`](reset.css): Reinicia los estilos predeterminados del navegador para garantizar una consistencia en el diseño entre navegadores.
-  - [`script.js`](script.js): Contiene la lógica principal de la aplicación, incluyendo la función de validación, encriptación, desencriptación y el comportamiento responsivo del sitio.
-  - [`img`](img/): Carpeta que contiene imágenes utilizadas en la aplicación.
-  - [`screenshots`](screenshots/): Carpeta que almacena capturas de pantalla del progreso del proyecto.
-  - [`LICENSE.md`](LICENSE.md): Archivo que contiene los términos de la licencia del proyecto.
-  - [`README.md`](README.md): Este archivo, que proporciona una descripción detallada del proyecto y su estructura.
-  - [`instruccionesChallenge.pdf`](instruccionesChallenge.pdf): Instrucciones detalladas proporcionadas por Alura LATAM para el desafío, en formato pdf.
-  - [`instruccionesChallenge.md`](instruccionesChallenge.md): Instrucciones detalladas proporcionadas por Alura LATAM para el desafío, en formato de texto, escriot desde la card 'Sobre el desafío', del archivo de Trello.
-  - [`.gitignore`](.gitignore): Archivo que especifica los archivos y carpetas que deben ignorarse en el control de versiones con Git.
+### Versión de Escritorio - Laptop (1025px - 1920px):
+<div align='center'>
+  <img src='screenshots/image8.png' alt='Versión de Escritorio - Laptop' width='1535'/>
+</div>
 
+### Versión Tablet (601px - 1024px):
+<div align='center'>
+  <img src='screenshots/image9.png' alt='Versión Tablet' width='770'/>
+</div>
 
-## Tecnologías utilizadas
+### Versión Dispositivo Móvil (260px - 600px):
+<div align='center'>
+  <img src='screenshots/image7.png' alt='Versión Dispositivo Móvil' width='375'/>
+</div>
 
-  - **HTML**: Se implementa de manera que asegure la semántica de la aplicación web, utilizando los elementos HTML de forma apropiada y significativa para estructurar y organizar el contenido.
-  - **CSS**: Se utiliza para el estilado y posicionamiento de los elementos HTML, aplicando reglas de estilo CSS para mejorar la presentación visual de la interfaz de usuario.
-  - **JavaScript**: Desarrollado para la lógica principal del encriptador web, incluyendo la implementación de la lógica de encriptación y desencriptación mediante diccionarios y expresiones regulares. Además, se utiliza para la función de validación que garantiza que el texto a encriptar o desencriptar no contenga mayúsculas ni caracteres especiales.
+## Cómo Contribuir
 
+Si estás interesado/a en contribuir al proyecto, ¡tu ayuda es bienvenida! Considera forkear el repositorio, realizar tus cambios y enviar un pull request. Si tienes alguna sugerencia o encuentras algún error, no dudes en abrir un issue en el repositorio.
 
-## Licencia
+## Agradecimientos y Recursos
 
-Este proyecto está bajo la [licencia MIT](LICENSE.md).
+Un agradecimiento especial a Alura LATAM y Oracle Next Education por proporcionar los materiales y el desafío que hicieron posible este proyecto. A continuación, algunos recursos externos que fueron de gran ayuda:
 
-
-## Capturas de Pantalla
-
-Vista previa del progreso actual del proyecto:
-  - Laptop [1025px - 1440px]:
-  ![Progreso actual en la parte de HTML, CSS y JavaScript, en laptops](screenshots/image5.png)
-
-  - Tablet [601px - 1024px] (1024px * 767px):
-  ![Progreso actual en la parte de HTML, CSS y JavaScript, en tablets](screenshots/image6.png)
-  
-
-## Recursos Externos
-
-  - **Cursos de Alura LATAM:**
+- **Cursos de Alura LATAM:**
     1. [Lógica de Programación: sumérgete en la programación con JavaScript](https://www.aluracursos.com/curso-online-logica-programacion-sumergete-programacion-javascript)
     2. [Lógica de programación: explorar funciones y listas](https://www.aluracursos.com/curso-online-logica-programacion-explorar-funciones-listas)
     3. [HTML5 y CSS3 parte 1: Mi primera página web](https://www.aluracursos.com/curso-online-html5-css3-primera-pagina-web)
@@ -71,15 +66,16 @@ Vista previa del progreso actual del proyecto:
     5. [HTML5 y CSS3 parte 3: Trabajando con formularios y tablas](https://www.aluracursos.com/curso-online-html5-css3-formularios-tablas)
     6. [HTML5 y CSS3 parte 4: Avanzando en CSS](https://www.aluracursos.com/curso-online-html5-css3-avanzando-css)
     7. [Git y GitHub: repositorio, commit y versiones](https://www.aluracursos.com/curso-online-git-github-repositorio-commit-versiones)
-  
-  - **Archivos proporcionados por Alura LATAM:**
+
+- **Archivos proporcionados por Alura LATAM:**
     1. [Prototipos de pantallas en Figma](https://www.figma.com/file/trP3p5nEh7XUyB3n2bomjP/Alura-Challenge---Desaf%C3%ADo-1---L%C3%B3gica?type=design&node-id=0-1&mode=design&t=CN0oLmGKgNSHYZUe-0)
     2. [Cards en Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one)
-    3. [Instrucciones del Challenge](Instrucciones_challenge.pdf)
+    3. [Instrucciones del Challenge](instruccionesChallenge.pdf)
 
-  - **Artículos adicionales**
-    1. [<textarea> | MDN](https://developer.mozilla.org/es/docs/Web/HTML/Element/textarea)
-    2. [Interact with the clipboard | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard)
-    3. [Style display Property | W3 Schools](https://www.w3schools.com/jsref/prop_style_display.asp)
-    4. [margin | MDN](https://developer.mozilla.org/es/docs/Web/CSS/margin)
-    5. [Expresiones Regulares | MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions)
+- **Páginas externas:**
+    1. [MDN Web Docs](https://developer.mozilla.org/)
+    2. [W3 Schools](https://www.w3schools.com/)
+
+## Licencia
+
+Este proyecto se distribuye bajo la [Licencia MIT](LICENSE.md), lo que permite su uso, modificación y distribución de manera libre.
