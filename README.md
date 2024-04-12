@@ -1,6 +1,6 @@
 # Encriptador Web: Proyecto Finalizado
 
-¡Bienvenido/a al repositorio del Encriptador Web! Este proyecto es el resultado de mi participación en el programa **Principiante en Programación G6 - ONE**, ofrecido por [Alura LATAM](https://www.aluracursos.com) en colaboración con [Oracle Next Education](https://www.oracle.com/lad/education/oracle-next-education). Aquí encontrarás todos los recursos y el código fuente necesario para implementar y comprender el funcionamiento de este encriptador de texto.
+¡Bienvenido/a al repositorio del Encriptador Web! Este proyecto es el resultado de mi participación en la formación **Principiante en Programación G6 - ONE**, ofrecido por [Alura LATAM](https://www.aluracursos.com) en colaboración con [Oracle Next Education](https://www.oracle.com/lad/education/oracle-next-education). Aquí encontrarás todos los recursos y el código fuente necesario para implementar y comprender el funcionamiento de este encriptador de texto.
 
 ## Acerca del Proyecto
 
